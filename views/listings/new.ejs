@@ -1,0 +1,44 @@
+<h1 class="mb-4 text-center">Create New Listing</h1>
+
+<form action="/listings" method="POST" enctype="multipart/form-data">
+
+	<!-- TITLE -->
+	<div class="mb-3">
+		<label for="title" class="form-label">Title</label>
+		<input type="text" class="form-control" id="title" name="title" required="" placeholder="Enter listing title">
+  </div>
+
+	<!-- PRICE -->
+	<div class="mb-3">
+		<label for="price" class="form-label">Price</label>
+		<input type="number" class="form-control" id="price" name="price" required="" placeholder="Enter price">
+  </div>
+
+	<!-- DESCRIPTION -->
+	<div class="mb-3">
+		<label for="description" class="form-label">Description</label>
+		<textarea class="form-control" id="description" name="description" required="" rows="4" placeholder="Enter description"></textarea>
+	</div>
+
+	<!-- LOCATION -->
+	<div class="mb-3">
+		<label for="location" class="form-label">Location</label>
+		<input type="text" class="form-control" id="location" name="location" placeholder="Enter city or area">
+  </div>
+
+	<!-- COUNTRY -->
+	<div class="mb-3">
+		<label for="country" class="form-label">Country</label>
+		<input type="text" class="form-control" id="country" name="country" placeholder="Enter country">
+  </div>
+
+	<!-- IMAGE -->
+	<div class="mb-3">
+		<label for="image" class="form-label">Upload Image</label>
+		<input class="form-control" type="file" id="image" name="image" accept="image/*">
+			<div class="form-text">Optional: upload one image. Allowed types: jpg, png, etc.</div>
+		</div>
+
+	<!-- SUBMIT -->
+	<button type="submit" class="btn btn-success">Create Listing</button>
+</form>

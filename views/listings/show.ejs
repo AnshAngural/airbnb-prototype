@@ -1,0 +1,64 @@
+﻿<!-- views/listings/show.ejs -->
+
+<div class="container my-5 d-flex justify-content-center">
+	<div class="card listing-show-card">
+		<div class="row g-0">
+
+			<!-- IMAGE COLUMN -->
+			<div class="col-md-6 d-flex align-items-center justify-content-center p-3">
+				<% if (listing.image && listing.image.length > 0) { %>
+				<img
+					src="<%= listing.image[0].url %>"
+				class="img-fluid rounded listing-image"
+				alt="Listing image"
+				/>
+				<% } else { %>
+				<img
+					src="https://via.placeholder.com/600x600?text=No+Image"
+					class="img-fluid rounded listing-image"
+					alt="No image"
+				/>
+				<% } %>
+			</div>
+
+			<!-- DETAILS COLUMN -->
+			<div class="col-md-6 p-4 d-flex flex-column justify-content-center">
+				<h1 class="mb-3">
+					<%= listing.title %>
+				</h1>
+
+				<h5 class="text-muted mb-2">
+					<%= listing.location %>, <%= listing.country || "" %>
+				</h5>
+
+				<p class="fw-bold mb-3">
+					₹ <%= listing.price %> / night
+				</p>
+
+				<p class="mb-4">
+					<%= listing.description %>
+				</p>
+
+				<div>
+					<a
+						href="/listings/
+						<%= listing._id %>/edit"
+						class="btn btn-warning me-2"
+						>
+						Edit
+					</a>
+
+					<form
+						action="/listings/
+						<%= listing._id %>?_method=DELETE"
+						method="POST"
+						class="d-inline"
+						>
+						<button class="btn btn-danger">Delete</button>
+					</form>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

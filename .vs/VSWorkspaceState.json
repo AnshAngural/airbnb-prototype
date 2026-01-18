@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\initDB",
+    "\\models",
+    "\\public",
+    "\\public\\css",
+    "\\public\\js",
+    "\\views",
+    "\\views\\listings",
+    "\\views\\partials",
+    "\\views\\users"
+  ],
+  "SelectedNode": "\\.gitignore",
+  "PreviewInSolutionExplorer": false
+}

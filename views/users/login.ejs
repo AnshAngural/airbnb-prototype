@@ -1,0 +1,37 @@
+<!-- views/users/login.ejs -->
+
+<h1 class="mb-4 text-center">Login</h1>
+<% if (success) { %>
+    <div class="alert alert-success"><%= success %></div>
+<% } %>
+
+<% if (error) { %>
+    <div class="alert alert-danger"><%= error %></div>
+<% } %>
+
+
+<form action="/login" method="POST" class="mx-auto" style="max-width: 400px;">
+
+    <!-- Username -->
+    <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" name="username" id="username" class="form-control" required>
+    </div>
+
+    <!-- Password -->
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" name="password" id="password" class="form-control" required>
+    </div>
+
+    <!-- Messages -->
+    <% if (error) { %>
+        <div class="alert alert-danger"><%= error %></div>
+    <% } %>
+
+    <button type="submit" class="btn btn-primary w-100">Login</button>
+
+    <p class="mt-3 text-center">
+        Don't have an account? <a href="/signup">Sign up here</a>
+    </p>
+</form>

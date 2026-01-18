@@ -1,0 +1,54 @@
+﻿<h1 class="mb-4 text-center">All Hotels</h1>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+	<% allListings.forEach(listing => { %>
+	<div class="col">
+		<a href="/listings/<%= listing._id %>" class="text-decoration-none text-dark">
+			<div class="card hotel-card h-100">
+
+			<!-- Image -->
+				<% if (listing.image && listing.image.length > 0) { %>
+				<img
+					src="<%= listing.image[0].url %>"
+				class="card-img-top"
+				alt="<%= listing.title %>"
+				style="height: 200px; object-fit: cover;"
+				/>
+				<% } else { %>
+                    <img
+					src="https://via.placeholder.com/400x200?text=No+Image"
+					class="card-img-top"
+					style="height: 200px; object-fit: cover;"
+                </img>   
+				<% } %>
+
+                <div class="card-body">
+
+					<!-- Title -->
+					<h5 class="card-title mb-1">
+						<%= listing.title %>
+					</h5>
+
+					<!-- Location -->
+					<p class="text-muted mb-2">
+						<%= listing.location %>, <%= listing.country %>
+					</p>
+
+					<!-- Description -->
+					<p class="card-text">
+						<%= (listing.description || "").substring(0, 100) %>
+						<% if (listing.description && listing.description.length > 100) { %>...<% } %>
+					</p>
+
+					<!-- Price -->
+					<p class="fw-bold mb-0">
+						₹ <%= listing.price %> / night
+					</p>
+
+				</div>
+				</img>
+			</div>
+		</a>
+	</div>
+	<% }) %>
+</div>
