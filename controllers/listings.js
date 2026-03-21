@@ -1,4 +1,4 @@
-﻿const Listing = require("../models/Listing");
+﻿const Listing = require("../models/listing");
 
 /**
  * INDEX – show all listings

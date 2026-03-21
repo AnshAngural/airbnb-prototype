@@ -11,7 +11,7 @@ const LocalStrategy = require("passport-local");
 const methodOverride = require("method-override");
 const expressLayouts = require("express-ejs-layouts");
 
-const User = require("./models/User");
+const User = require("./models/user");
 
 const app = express();
 
