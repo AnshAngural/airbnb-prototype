@@ -1,7 +1,7 @@
 ﻿const express = require("express");
 const router = express.Router();
 const listings = require("../controllers/listings");
-const isLoggedIn = require("../middleware/isLoggedIn");
+const isLoggedIn = require("../middleware/isloggedIn");
 const multer = require("multer");
 const { storage } = require("../cloudConfig"); // Cloudinary config
 const upload = multer({ storage });
