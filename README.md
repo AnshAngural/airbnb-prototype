@@ -30,7 +30,7 @@ A full-stack property listing web application inspired by Airbnb. Built with Nod
 |-------|-----------|
 | Backend | Node.js, Express.js |
 | Frontend | EJS, HTML5, CSS3, Bootstrap |
-| Database | MongoDB, Mongoose |
+| Database | MongoDB, Mongoose,Cloudinary |
 | Authentication | Express-Session, Passport.js |
 | Deployment | Render |
 
