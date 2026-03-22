@@ -1,67 +1,121 @@
-# Airbnb Prototype – Hotel Listing Web Application
+# 🏠 Airbnb Prototype
 
-A full-stack web application inspired by Airbnb that allows users to browse, create, edit, and manage hotel listings. The project demonstrates CRUD functionality, authentication, image handling, and responsive UI design using modern web technologies.
+A full-stack property listing web application inspired by Airbnb. Built with Node.js, Express, MongoDB, and EJS — featuring complete CRUD operations, session-based authentication, and user authorization.
 
----
-
-## 🚀 Features
-
-- User authentication (Signup / Login / Logout)
-- Create, edit, and delete hotel listings
-- Upload and display multiple images per listing
-- View listing details (title, description, price, location, country)
-- Responsive UI using Bootstrap
-- Secure session handling
-- RESTful routing structure
+🔗 **Live Demo:** [airbnb-prototype-4spb.onrender.com](https://airbnb-prototype-4spb.onrender.com)
 
 ---
 
-## 🛠 Tech Stack
+## 📸 Screenshots
 
-**Frontend**
-- EJS (Embedded JavaScript Templates)
-- Bootstrap 5
-- Font Awesome Icons
-- Custom CSS
-- html
+> _Add screenshots of your home page, listing page, and login page here_
 
-**Backend**
-- Node.js
-- Express.js
-- MongoDB with Mongoose
-- Express Sessions
-- Method Override
-- Cloudinary (for image uploads)
 ---
-## ⚙️ Installation & Setup
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/AnshAngural/airbnb-prototype.git
-2. Navigate into the project folder:
-```bash copy 
+## ✨ Features
+
+- 🔐 **User Authentication** — Register, login and logout using secure session-based auth
+- 🛡️ **Authorization** — Users can only edit or delete their own listings
+- 🏡 **Property Listings** — Create, read, update and delete property listings
+- 💬 **Reviews** — Logged-in users can leave reviews on listings
+- 📱 **Responsive Design** — Mobile-friendly UI built with Bootstrap
+- ✅ **Form Validation** — Server-side and client-side validation on all forms
+- 🚀 **Deployed** — Live on Render
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Backend | Node.js, Express.js |
+| Frontend | EJS, HTML5, CSS3, Bootstrap |
+| Database | MongoDB, Mongoose |
+| Authentication | Express-Session, Passport.js |
+| Deployment | Render |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js installed
+- MongoDB Atlas account (or local MongoDB)
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/AnshAngural/airbnb-prototype.git
+
+# Navigate into the project
 cd airbnb-prototype
-3. Install dependencies: 
-```bash 
+
+# Install dependencies
 npm install
-4. Start MongoDB locally.
-5. Create a .env file in the root directory and add:
-SESSION_SECRET=your_secret_key   
-or**
 
-**cd initDB and run node listing.js to seed data in your mongodb
-6. Navigate into the project folder:
-```bash copy 
-cd airbnb-prototype
+# Create a .env file in the root directory
+touch .env
+```
 
-7. Run the application:
-nodemon app.js
-or
-Copy code
+### Environment Variables
+
+Add the following to your `.env` file:
+
+```env
+MONGO_URL=your_mongodb_connection_string
+SECRET=your_session_secret
+```
+
+### Run the App
+
+```bash
 node app.js
-8 . Open in your browser:
-http://localhost:3000
-Copy code
+```
+
+Visit `http://localhost:3000` in your browser.
 
 ---
 
+## 📁 Project Structure
+
+```
+airbnb-prototype/
+├── models/
+│   ├── listing.js
+│   └── user.js
+├── routes/
+│   ├── listing.js
+│   └── user.js
+├── views/
+│   ├── listings/
+│   └── users/
+├── public/
+│   └── css/
+├── middleware.js
+├── app.js
+└── package.json
+```
+
+---
+
+## 🔑 Key Concepts Demonstrated
+
+- **MVC Architecture** — Clean separation of Models, Views, and Controllers
+- **Session-based Auth** — Secure login system using express-session
+- **RESTful Routes** — Proper use of GET, POST, PUT, DELETE routes
+- **Middleware** — Custom middleware for authentication checks
+- **MongoDB CRUD** — Full create, read, update, delete with Mongoose
+
+---
+
+## 👨‍💻 Author
+
+**Ansh Angural**
+- GitHub: [@AnshAngural](https://github.com/AnshAngural)
+- LinkedIn: [Ansh Angural](https://www.linkedin.com/in/ansh-angural-4959b42b2)
+- Portfolio: [AnshAngural.github.io](https://AnshAngural.github.io)
+
+---
+
+⭐ If you found this project useful, please give it a star!
