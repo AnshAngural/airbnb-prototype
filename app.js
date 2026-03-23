@@ -16,9 +16,8 @@ const User = require("./models/user");
 const app = express();
 
 /* -------------------- MongoDB -------------------- */
-mongoose
-    .connect("mongodb://127.0.0.1:27017/sites")
-    .then(() => console.log("MongoDB Connected"))
+mongoose.connect(process.env.MONGO_URL)
+    .then(() => console.log('MongoDB connected'))
     .catch(err => console.log(err));
 
 /* -------------------- View Engine -------------------- */
