@@ -11,7 +11,11 @@ const listingSchema = new mongoose.Schema({
     description: String,
     image: [imageSchema],       // array of objects
     location: String,           // city or area
-    country: String             // country
+    country: String,
+    owner: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+    }
 });
 
 module.exports = mongoose.model("Listing", listingSchema);

@@ -25,19 +25,19 @@ module.exports.newForm = (req, res) => {
 module.exports.create = async (req, res, next) => {
     try {
         const { title, price, description, location, country } = req.body;
-
         const listing = new Listing({ title, price, description, location, country });
 
         if (req.file) {
             listing.image = [{ url: req.file.path, filename: req.file.filename }];
         }
 
+        listing.owner = req.user._id;  // ← make sure this line exists
+
         await listing.save();
         req.session.success = "Listing created successfully!";
         res.redirect(`/listings/${listing._id}`);
     } catch (err) {
-        req.session.error = err.message;
-        next(err);
+        next(err);  // ← passes error to error handler
     }
 };
 

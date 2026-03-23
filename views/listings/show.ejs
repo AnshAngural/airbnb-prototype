@@ -32,31 +32,29 @@
 				</h5>
 
 				<p class="fw-bold mb-3">
-					₹ <%= listing.price %> / night
+					$ <%= listing.price %> / night
 				</p>
 
 				<p class="mb-4">
 					<%= listing.description %>
 				</p>
 
-				<div>
-					<a
-						href="/listings/
-						<%= listing._id %>/edit"
-						class="btn btn-warning me-2"
-						>
+				<!-- Only show Edit/Delete to the listing owner -->
+				<% if (currentUser && listing.owner && listing.owner.equals(currentUser._id)) { %>
+				<div class="d-flex justify-content-between align-items-center mt-3">
+					<a href="/listings/
+						<%= listing._id %>/edit" class="btn btn-warning me-2">
 						Edit
 					</a>
-
-					<form
-						action="/listings/
-						<%= listing._id %>?_method=DELETE"
-						method="POST"
-						class="d-inline"
-						>
-						<button class="btn btn-danger">Delete</button>
+					<form action="/listings/
+						<%= listing._id %>?_method=DELETE" method="POST">
+						<button class="btn btn-danger px-4">
+							<i class="fa-solid fa-trash me-1"></i> Delete
+						</button>
 					</form>
 				</div>
+				<% } %>
+
 			</div>
 
 		</div>

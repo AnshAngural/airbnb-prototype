@@ -59,13 +59,18 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+// Add this AFTER your session/passport setup
+app.use((req, res, next) => {
+    res.locals.currentUser = req.user; // if using Passport.js
+    next();
+});
+
 /* -------------------- Global Variables -------------------- */
 app.use((req, res, next) => {
     res.locals.user = req.user;
     next();
 });
-
-/* -------------------- Routes -------------------- */
+/* --------------------Routes -------------------- */
 app.get("/", (req, res) => {
     res.redirect("/listings");
 });
@@ -73,6 +78,17 @@ app.get("/", (req, res) => {
 app.use("/listings", require("./routes/listings"));
 app.use("/", require("./routes/users"));
 app.use("/bookings", require("./routes/bookings"));
+
+/* -------------------- 404 Handler -------------------- */
+app.use((req, res) => {
+    res.status(404).render("error", { message: "Page not found" });
+});
+
+/* -------------------- Error Handler -------------------- */
+app.use((err, req, res, next) => {
+    const { status = 500, message = "Something went wrong" } = err;
+    res.status(status).render("error", { message });
+});
 
 /* -------------------- Server -------------------- */
 app.listen(3000, () => {
