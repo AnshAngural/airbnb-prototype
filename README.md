@@ -7,6 +7,11 @@ A full-stack property listing web application inspired by Airbnb. Built with Nod
 ---
 
 ## 📸 Screenshots
+<img width="1920" height="1029" alt="Screenshot (7)" src="https://github.com/user-attachments/assets/ff1cfb5d-832e-4e76-acaa-f04706a015f0" />
+
+<img width="1920" height="1023" alt="Screenshot (8)" src="https://github.com/user-attachments/assets/72844e2f-4dad-4040-828d-0dbb80df037d" />
+<img width="1920" height="1024" alt="Screenshot (9)" src="https://github.com/user-attachments/assets/159f3532-5154-4644-82c2-04a7df650f0d" />
+
 
 
 
